@@ -1,6 +1,8 @@
 package com.qa.bookshop.repository;
 
-import com.qa.bookshop.entity.Book;
+import java.util.List;
+
+import com.qa.bookshop.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,5 +10,6 @@ import javax.transaction.Transactional;
 
 @Repository
 @Transactional
-public interface BookRepository extends JpaRepository<Book, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
+    User findByUsername(String username);
 }
