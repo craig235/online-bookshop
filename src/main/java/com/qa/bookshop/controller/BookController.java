@@ -2,9 +2,6 @@ package com.qa.bookshop.controller;
 
 import java.util.List;
 
-import com.qa.bookshop.entity.Book;
-import com.qa.bookshop.exception.BookNotFoundException;
-import com.qa.bookshop.service.BookServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
+
+import com.qa.bookshop.entity.Book;
+import com.qa.bookshop.exception.BookNotFoundException;
+import com.qa.bookshop.service.BookServiceImpl;
 
 @RestController
 @RequestMapping("api/v1")

@@ -25,13 +25,13 @@ public class Book {
 
     @NotNull
     @Size(min = 2, max = 50, message = "Author must be between 2 and 50 characters only")
-    @Pattern(regexp = "^[A-Za-z0-9]*", message = "Invalid author, must contain only alphanumeric")
+    @Pattern(regexp = "^[A-Za-z]*", message = "Invalid author, must contain only alphanumeric")
     @Column(name = "book_author")
     private String author;
 
     @NotNull
     @Size(min = 2, max = 100, message = "Title must be between 2 and 100 characters only")
-    @Pattern(regexp = "^[A-Za-z0-9]*", message = "Invalid title, must contain only alphanumeric")
+    @Pattern(regexp = "^[A-Za-z]*", message = "Invalid title, must contain only alphanumeric")
     @Column(name = "book_title")
     private String title;
 }

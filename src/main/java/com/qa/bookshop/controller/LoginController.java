@@ -1,16 +1,17 @@
 package com.qa.bookshop.controller;
 
-import com.qa.bookshop.entity.User;
-import com.qa.bookshop.exception.InvalidCredentialsException;
-import com.qa.bookshop.exception.UserAlreadyExistsException;
-import com.qa.bookshop.service.LoginService;
-import com.qa.bookshop.service.LoginServiceImpl;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import com.qa.bookshop.entity.User;
+import com.qa.bookshop.exception.InvalidCredentialsException;
+import com.qa.bookshop.exception.UserAlreadyExistsException;
+import com.qa.bookshop.service.LoginService;
+import com.qa.bookshop.service.LoginServiceImpl;
 
 @RestController
 @RequestMapping("api/v1")
