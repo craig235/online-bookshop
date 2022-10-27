@@ -53,7 +53,7 @@ public class BookRepositoryTest {
         bookRepository.deleteAll();
         bookList = null;
     }
-/*
+
     @Test
     @DisplayName("save-book-test")
     public void given_Book_To_Save_Should_Return_The_Saved_Book() {
@@ -62,7 +62,7 @@ public class BookRepositoryTest {
         assertEquals("Peter", savedBook.getAuthor());
         assertEquals("Life of Peter", savedBook.getTitle());
     }
-*/
+
     @Test
     @DisplayName("get-book-non-existing-id-test")
     public void given_Non_Existing_Id_Should_Return_Optional_Empty() {

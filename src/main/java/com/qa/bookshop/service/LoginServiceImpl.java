@@ -5,9 +5,11 @@ import com.qa.bookshop.exception.InvalidCredentialsException;
 import com.qa.bookshop.exception.UserAlreadyExistsException;
 import com.qa.bookshop.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Component("LoginServiceImpl")
+@Service("LoginServiceImpl")
 public class LoginServiceImpl implements LoginService {
 
     @Autowired
