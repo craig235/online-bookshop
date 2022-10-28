@@ -24,14 +24,14 @@ public class User {
     private int id;
 
     @NotNull
-    @Size(min = 2, max = 50, message = "User name must be between 2 and 50 characters only")
-    @Pattern(regexp = "^[A-Za-z ]*", message = "Invalid user name, must contain only alphanumeric")
+    @Size(min = 2, max = 50, message = "User name must be between 2 and 50 characters only.")
+    @Pattern(regexp = "^[A-Za-z ]*", message = "Invalid user name, must contain only alpha characters.")
     @Column(name = "username")
     private String username;
 
     @NotNull
     @Size(min = 8, max = 50, message = "Password must be between 8 and 50 characters only")
-    @Pattern(regexp = "^[A-Za-z ]*", message = "Invalid password, must contain only alphanumeric")
+    @Pattern(regexp = "^[A-Za-z0-9 ]*", message = "Invalid password, must contain only alphanumeric.")
     @Column(name = "password")
     private String password;
 }
