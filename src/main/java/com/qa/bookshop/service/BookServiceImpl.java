@@ -18,27 +18,6 @@ public class BookServiceImpl implements BookService {
     BookRepository bookRepository;
 
     @Override
-    public Book saveBook(Book book) throws BookAlreadyExistsException {
-
-        Book createdBook = null;
-        /*
-         * 1. Check whether book already exists
-         * 2. If yes, throw BookAlreadyExistsException
-         * 3. If no, save book object to database
-         * 4. Return the created book object
-         */
-
-        Book bookByName = this.bookRepository.findByTitle(book.getTitle());
-        if(bookByName != null) {
-            throw new BookAlreadyExistsException();
-        } else {
-            createdBook = this.bookRepository.save(book);
-        }
-
-        return createdBook;
-    }
-
-    @Override
     public List<Book> getAllBooks() {
         return this.bookRepository.findAll();
     }
@@ -50,5 +29,45 @@ public class BookServiceImpl implements BookService {
             throw new BookNotFoundException();
         }
         return findByIdOptional.get();
+    }
+
+    @Override
+    public Book addBook(Book book) throws BookAlreadyExistsException {
+
+        Book createdBook = null;
+        /*
+         * 1. Check whether book already exists
+         * 2. If yes, throw BookAlreadyExistsException
+         * 3. If no, save book object to database
+         * 4. Return the created book object
+         */
+
+        Book bookByName = this.bookRepository.findByTitle(book.getTitle());
+        if (bookByName != null) {
+            throw new BookAlreadyExistsException();
+        } else {
+            createdBook = this.bookRepository.save(book);
+        }
+
+        return createdBook;
+    }
+
+    @Override
+    public Book updateBook(Book book) throws BookNotFoundException {
+        Optional<Book> findByIdOptional = this.bookRepository.findById(book.getId());
+        if (findByIdOptional.isEmpty()) {
+            throw new BookNotFoundException();
+        }
+        return this.bookRepository.save(book);
+    }
+
+    @Override
+    public boolean deleteBook(int id) throws BookNotFoundException {
+        Optional<Book> findByIdOptional = this.bookRepository.findById(id);
+        if (findByIdOptional.isEmpty()) {
+            throw new BookNotFoundException();
+        }
+        this.bookRepository.delete(findByIdOptional.get());
+        return true;
     }
 }

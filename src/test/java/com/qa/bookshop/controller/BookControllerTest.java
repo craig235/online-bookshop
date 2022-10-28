@@ -71,7 +71,7 @@ public class BookControllerTest {
     @Test
     @DisplayName("save-book-test")
     public void given_Book_To_Save_Book_Should_Return_Book_As_JSON_With_Status_Created() throws Exception {
-        when(bookService.saveBook(any())).thenReturn(book1);
+        when(bookService.addBook(any())).thenReturn(book1);
         mockMvc.perform(post("/api/v1/book-service/books")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(asJsonString(book1)))

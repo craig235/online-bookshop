@@ -65,7 +65,7 @@ public class BookServiceTest {
     public void given_Book_To_Save_Should_Return_The_Saved_Book() throws BookAlreadyExistsException {
         when(bookRepository.findByTitle(any())).thenReturn(null);
         when(bookRepository.save(any())).thenReturn(book1);
-        Book savedBook = bookService.saveBook(book1);
+        Book savedBook = bookService.addBook(book1);
         assertNotNull(savedBook);
         assertEquals(1,savedBook.getId());
         verify(bookRepository,times(1)).findByTitle(any());
@@ -78,6 +78,6 @@ public class BookServiceTest {
         when(bookRepository.findByTitle(any())).thenReturn(book1);
 
         //empService.saveEmployee(emp1);
-        assertThrows(BookAlreadyExistsException.class,()-> bookService.saveBook(book1));
+        assertThrows(BookAlreadyExistsException.class,()-> bookService.addBook(book1));
     }
 }

@@ -20,18 +20,18 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "book_id")
+    @Column(name = "id")
     private int id;
 
     @NotNull
     @Size(min = 2, max = 50, message = "Author must be between 2 and 50 characters only")
     @Pattern(regexp = "^[A-Za-z ]*", message = "Invalid author, must contain only alphanumeric")
-    @Column(name = "book_author")
+    @Column(name = "author")
     private String author;
 
     @NotNull
     @Size(min = 2, max = 100, message = "Title must be between 2 and 100 characters only")
     @Pattern(regexp = "^[A-Za-z ]*", message = "Invalid title, must contain only alphanumeric")
-    @Column(name = "book_title")
+    @Column(name = "title")
     private String title;
 }
