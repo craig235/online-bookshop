@@ -77,7 +77,6 @@ public class BookServiceTest {
     public void given_Existing_Book_To_Save_Method_Should_Throw_Exception() throws BookAlreadyExistsException {
         when(bookRepository.findByTitle(any())).thenReturn(book1);
 
-        //empService.saveEmployee(emp1);
         assertThrows(BookAlreadyExistsException.class,()-> bookService.addBook(book1));
     }
 }

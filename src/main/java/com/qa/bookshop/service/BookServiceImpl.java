@@ -70,4 +70,9 @@ public class BookServiceImpl implements BookService {
         this.bookRepository.delete(findByIdOptional.get());
         return true;
     }
+
+    @Override
+    public List<Book> findByAuthor(String author) throws BookNotFoundException {
+        return this.bookRepository.findByAuthor(author);
+    }
 }

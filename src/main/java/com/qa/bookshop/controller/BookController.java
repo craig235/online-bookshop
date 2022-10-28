@@ -92,4 +92,16 @@ public class BookController {
         }
         return responseEntity;
     }
+
+    @GetMapping("books/author/{author}")
+    public ResponseEntity<?> findByAuthor(@PathVariable("author") String author){
+        try {
+            List<Book> bookListByAuthor = this.bookService.findByAuthor(author);
+            responseEntity = new ResponseEntity<>(bookListByAuthor,HttpStatus.OK);
+        } catch(Exception e) {
+            responseEntity = new ResponseEntity<>("An internal error occurred. Please try again.",HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        return responseEntity;
+    }
 }
