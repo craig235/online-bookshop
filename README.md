@@ -1,5 +1,7 @@
 # Online Bookshop
 
+https://github.com/craig235/online-bookshop
+
 The objective of this assignment is to create the backend service for an online bookshop. Service allows new customers to signup or existing customers to login. Books can be created, updated, deleted or read.
 
 ### Problem Statement
@@ -50,6 +52,9 @@ Create a Spring Boot API utilising supporting tools, methodologies and technolog
 ```bash
 /api/v1/book-service/books/{id}
 ```
+```bash
+/api/v1/book-service/books/author/{author}
+```
 
 ### Database Data
 
@@ -67,3 +72,6 @@ insert into t_book (id,author,title) values
 
 ### Sample Screens - Example
 ![](./images/example-getallbooks.png)
+
+### Document control
+Author: Craig Wells, 28 Oct 2022.
