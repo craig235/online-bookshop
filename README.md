@@ -32,7 +32,7 @@ Create a Spring Boot API utilising supporting tools, methodologies and technolog
 1. Java. Install JDK 17 from Oracle website (https://www.oracle.com/java/technologies/downloads/).
 2. Java. Set relevant environment variables - JAVA_HOME, Path etc.
 3. MySQL. Install MySQL community edition (https://www.mysql.com/products/community/).
-4. Application. Download jar from GitHub and save to local folder.
+4. Application. Download jar from GitHub and save to local folder (https://github.com/craig235/online-bookshop/releases).
 5. Application. Open command window / terminal in local folder.
 6. Java. Check Java runs and is version 17 (java -version).
 7. Application. Start application (java -jar <jarname.jar>).
